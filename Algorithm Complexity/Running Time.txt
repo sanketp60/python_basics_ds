@@ -1,0 +1,107 @@
+Time for system to execute expressions may vary due to changes in specifications.
+Hence, time complexity is expressed as a mathematical expression.
+
+======================================
+Linear Complexity
+size(arr) -> 100  -> 0.22 ms
+size(arr) -> 1000 -> 2.23 ms
+
+|     /
+|    /
+|   /
+|  /
+| /
+|/_____________
+
+time = a*n + b
+
+1. Keep fastest growing term
+	Hence, time = a*n
+
+2. Drop constants
+	time = O(n)
+
+Example:
+def funct(x):
+	for n in x:
+		y=do_something(x)
+	return y
+
+time = O(n)
+
+======================================
+Constant complexity
+size(arr) -> 100  -> 0.22 ms
+size(arr) -> 1000 -> 0.23 ms
+
+|
+|
+|
+|      _
+|----_- --_---
+|______________
+
+time = a
+Hence, complexity after 2 rules
+time = O(1)
+
+def funct(x,y):
+	sum = x+y
+	return sum
+
+time = O(1)
+
+======================================
+Square complexity
+
+Example 1: (square complexity)
+for i in range(len(numbers)):
+	for j in range(i+1, len(numbers)):
+		if numbers[i]==numbers[j]:
+			print(numbers[i] + " is a duplicate")
+			break
+
+time = a*(n^2)+b
+Hence, time = O(n^2)
+
+Example 2: (square complexity)
+
+for i in range(len(numbers)):
+	for j in range(i+1, len(numbers)):
+		if numbers[i]==numbers[j]:
+			print(numbers[i] + " is a duplicate")
+			break
+
+for i in range(len(numbers)):
+	if numbers[i]==duplicate:
+		print(i)
+
+time = a*(n^2)+b*n+c
+Hence, time = O(n^2)
+
+======================================
+Logarithmic complexity
+
+In binary search algo,
+
+Iteration 1:
+time = n/(2^1)
+
+Iteration 2:
+time = n/(2^2)
+
+...
+
+
+Iteration k:
+time = n/(2^k)
+
+Hence, n = 2^k
+
+log(2)n = log(2)2^k
+
+log(2)n = k*[log(2)2]
+
+Hence, k = log(2)n
+
+Therefore, time = O(log n)
